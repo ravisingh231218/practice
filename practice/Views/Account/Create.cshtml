@@ -1,0 +1,39 @@
+﻿@model practice.Models.User;
+@* 
+@{
+    ViewData["Title"] = "Create";
+} *@
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                <h1 class="text-center text-primary">Add Employee</h1>
+        </div>
+          <div class="card-body">
+            <form method="post" asp-action="Create">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input type="text" asp-for="Name" class="form-control" placeholder="Enter employee Name" />
+                </div>
+                <label asp-for="Gender"></label>
+              <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
+                  <option value="">Selection Gender</option>
+              </select>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input type="text" asp-for="Email" class="form-control" placeholder="Enter employee Email" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input type="text" asp-for="Password" class="form-control" placeholder="Enter employee Password" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-sm btn-outline-success floatright" />
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
